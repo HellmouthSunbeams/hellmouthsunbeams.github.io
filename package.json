@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Fan page of the Hellmouth Sunbeams",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "elm-live ./src/Main.elm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HellmouthSunbeams/hellmouthsunbeams.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HellmouthSunbeams/hellmouthsunbeams.github.io/issues"
+  },
+  "homepage": "https://github.com/HellmouthSunbeams/hellmouthsunbeams.github.io#readme",
+  "dependencies": {
+    "elm-live": "^4.0.2"
+  }
+}
