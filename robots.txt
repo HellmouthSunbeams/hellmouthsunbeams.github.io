@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: hellmouth.club
+Sitemap: https://hellmouth.club/sitemap.xml
