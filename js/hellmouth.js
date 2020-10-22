@@ -1,4 +1,8 @@
-const fics = [
+const sortFanwork = (works) => works.sort((left, right) =>
+  (left.author + left.title).localeCompare(right.author + right.title)
+);
+
+const fics = sortFanwork([
   // -- ADD YOUR FICS HERE --
   {
     url:
@@ -33,9 +37,29 @@ const fics = [
     characters: ["Nagomi Nava"],
   },
   // -- END FICS --
-].sort((left, right) =>
-  (left.author + left.title).localeCompare(right.author + right.title)
-);
+]);
+
+const music = sortFanwork([
+  // -- ADD YOUR MUSIC HERE --
+  {
+    url:
+      "https://thegarages.bandcamp.com/track/the-tug",
+    title: "The Tug",
+    author: "amadis",
+  },
+  {
+    url:
+      "https://thegarages.bandcamp.com/track/do-not-come-to-the-hellmouth",
+    title: "Don't Come To The Hellmouth",
+    author: "slavfox",
+  },
+  {
+    url:
+      "https://www.youtube.com/watch?v=Cihbcuii9WA",
+    title: "bury our light",
+    author: "slavfox",
+  },
+]);
 
 const characters = [...new Set(fics.map((fic) => fic["characters"]).flat())];
 
