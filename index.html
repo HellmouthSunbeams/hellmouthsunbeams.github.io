@@ -90,9 +90,9 @@
           </ul>
         </div>
         <div class="column">
-          <h2>Beam Writing</h2>
+          <h2>Beam Fanwork</h2>
           <p>
-            A collection of Sunbeams fan fiction. If you've written something
+            A collection of Sunbeams fanwork. If you've written something
             Beamy and want it to be added here, send us a pull request adding it
             to
             <a
@@ -100,6 +100,7 @@
               >the list</a
             >, or just ping @slavfox in the Discord.
           </p>
+          <h3>Writing</h3>
           <ul id="fics-list">
             <template x-for="fic in getFilteredFics(ficFilters)">
               <li>
@@ -110,6 +111,15 @@
                     x-text="fic.characters.join(',')"
                   ></span>
                 </p>
+              </li>
+            </template>
+          </ul>
+          <h3>Music</h3>
+          <ul id="music-list">
+            <template x-for="song in music">
+              <li>
+                <a :href="song.url" x-text='`"${song.title}"`'> </a> -
+                <span class="author" x-text="song.author"> </span>
               </li>
             </template>
           </ul>
