@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hellmouth Sunbeams</title>
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <!-- Milligram CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+
+    <script src="/js/hellmouth.js"></script>
+  </head>
+  <body>
+    <div class="container" x-data="websiteState()">
+      <div class="row">
+        <div class="column center">
+          <h1><a href="https://hellmouth.club/">hellmouth.club</a></h1>
+          <img src="/images/sun.svg" id="emoji" />
+          <h2>
+            The
+            <a href="https://blaseball.fandom.com/wiki/Hellmouth_Sunbeams"
+              >Hellmouth Sunbeams</a
+            >
+            Community Website
+          </h2>
+          <div class="aspect-ratio">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/bGpnUSLaVmE"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h2>Useful Beam Links</h2>
+          <p>Keep these handy!</p>
+          <ul>
+            <li>
+              <a
+                href="https://docs.google.com/document/d/1WosQoDjk96vLZOnXmbJ_qv6b_X9qnj_Klu2-YHLyE1w/edit?usp=sharing"
+              >
+                <strong>So you're a Sunbeam Now!</strong>
+              </a>
+              - a welcome guide for new Sunbeams fans
+            </li>
+            <li>
+              <a href="https://twitter.com/hmouthsunbeams"> @hmouthsunbeams </a>
+              on Twitter
+            </li>
+            <li>
+              <a href="https://slavfox.space/abslve/">
+                abslve</a> - a blaseball (FK) stats viewer
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/drive/folders/1wn1xwbgWcDuNsFRAuXYcfnGfI2jrxrBV?usp=sharing
+              "
+              >
+                The Beams meme folder
+              </a>
+            </li>
+            <li>
+              <a href="https://hellmouth.rocks/"> Hellmouth Rocks </a>
+            </li>
+          </ul>
+        </div>
+        <div class="column">
+          <h2>Beam Writing</h2>
+          <p>
+            A collection of Sunbeams fan fiction. If you've written something
+            Beamy and want it to be added here, send us a pull request adding it
+            to
+            <a
+              href="https://github.com/HellmouthSunbeams/hellmouthsunbeams.github.io/blob/master/js/hellmouth.js"
+              >the list</a
+            >, or just ping @slavfox in the Discord.
+          </p>
+          <ul id="fics-list">
+            <template x-for="fic in getFilteredFics(ficFilters)">
+              <li>
+                <a :href="fic.url" x-text='`"${fic.title}"`'> </a>
+                - <span x-text="getFicMeta(fic)"></span>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <footer class="column">
+          <p>
+            Want to improve the website? Send us a pull request @
+            <a
+              href="https://github.com/HellmouthSunbeams/hellmouthsunbeams.github.io"
+              >github.com/HellmouthSunbeams</a
+            >!
+          </p>
+          <p>
+            Sun emoji provided by <a href="https://twemoji.twitter.com/">Twemoji</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> 
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

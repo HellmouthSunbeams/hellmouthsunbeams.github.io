@@ -1,9 +1,0 @@
-url: "https://hellmouth.club"
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-plugins:
-  - jekyll-sitemap
