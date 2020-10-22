@@ -28,3 +28,24 @@ footer {
 #emoji {
   max-width: 20%;
 }
+
+@media screen and (max-width: 480px) {
+  .column {
+    padding: 0px;
+  }
+  .aspect-ratio {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .aspect-ratio iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
