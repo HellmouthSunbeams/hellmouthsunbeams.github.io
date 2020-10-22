@@ -66,8 +66,8 @@
               on Twitter
             </li>
             <li>
-              <a href="https://slavfox.space/abslve/">
-                abslve</a> - a blaseball (FK) stats viewer
+              <a href="https://slavfox.space/abslve/"> abslve</a> - a blaseball
+              (FK) stats viewer
             </li>
             <li>
               <a
@@ -81,8 +81,10 @@
               <a href="https://hellmouth.rocks/"> Hellmouth Rocks </a>
             </li>
             <li>
-              <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx9_IKm-q41z7urkkvZJGngoKQkXr2ShFCJu1NmMp7Gbr2nqRabxPQpJ-t7fKIVCdRltQaanzx7Enr/pubhtml">
-              The Hellmouth Community College Course Catalog
+              <a
+                href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx9_IKm-q41z7urkkvZJGngoKQkXr2ShFCJu1NmMp7Gbr2nqRabxPQpJ-t7fKIVCdRltQaanzx7Enr/pubhtml"
+              >
+                The Hellmouth Community College Course Catalog
               </a>
             </li>
           </ul>
@@ -101,10 +103,13 @@
           <ul id="fics-list">
             <template x-for="fic in getFilteredFics(ficFilters)">
               <li>
-                <a :href="fic.url" x-text='`"${fic.title}"`'> </a> - <span class="author" x-text="fic.author">
-
-                </span>
-                <p><span x-text="fic.words"></span> words<br/><span x-text="fic.characters.join(',')"></span></p>
+                <a :href="fic.url" x-text='`"${fic.title}"`'> </a> -
+                <span class="author" x-text="fic.author"> </span>
+                <p>
+                  <span x-text="fic.words"></span> words<br /><span
+                    x-text="fic.characters.join(',')"
+                  ></span>
+                </p>
               </li>
             </template>
           </ul>
@@ -120,7 +125,9 @@
             >!
           </p>
           <p>
-            Sun emoji provided by <a href="https://twemoji.twitter.com/">Twemoji</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> 
+            Sun emoji provided by
+            <a href="https://twemoji.twitter.com/">Twemoji</a> under
+            <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
           </p>
         </footer>
       </div>
