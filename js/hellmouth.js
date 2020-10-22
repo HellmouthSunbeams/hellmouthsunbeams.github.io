@@ -17,33 +17,25 @@ const fics = [
     characters: ["Nagomi Nava"],
   },
   {
-      url: "https://docs.google.com/document/d/1yrhbP46F67OgNgwRzg0xSAikOE3dEi8qZIPVZssUzr8/edit?usp=sharing",
-      title: "Haunted Moon Island",
-      words: 1014,
-      author: "Solistic Barb",
-      characters: ["Multiple characters"]
+    url:
+      "https://docs.google.com/document/d/1yrhbP46F67OgNgwRzg0xSAikOE3dEi8qZIPVZssUzr8/edit?usp=sharing",
+    title: "Haunted Moon Island",
+    words: 1014,
+    author: "Solistic Barb",
+    characters: ["Multiple characters"],
   },
   {
-      url: "https://docs.google.com/document/d/1AuM4HeM6MLypvpE0iWs5loQQHTxqLwBL0ZcBoYYOtpE/edit?usp=sharing",
-      title: "Precognition",
-      words: 924,
-      author: "dasy",
-      characters: ["Nagomi Nava"]
-  }
+    url:
+      "https://docs.google.com/document/d/1AuM4HeM6MLypvpE0iWs5loQQHTxqLwBL0ZcBoYYOtpE/edit?usp=sharing",
+    title: "Precognition",
+    words: 924,
+    author: "dasy",
+    characters: ["Nagomi Nava"],
+  },
   // -- END FICS --
-].sort((left, right) => {
-  if (left.author > right.author) {
-    return 1;
-  } else if (left.author < right.author) {
-    return -1;
-  } else if (left.title > right.title) {
-    return 1;
-  } else if (left.title < right.title) {
-    return -1;
-  } else {
-    return 0;
-  }
-});
+].sort((left, right) =>
+  (left.author + left.title).localeCompare(right.author + right.title)
+);
 
 const characters = [...new Set(fics.map((fic) => fic["characters"]).flat())];
 
@@ -66,6 +58,6 @@ const websiteState = () => {
         );
       }
       return filteredFics;
-    }
+    },
   };
 };
