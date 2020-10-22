@@ -16,6 +16,20 @@ const fics = [
     author: "slavfox",
     characters: ["Nagomi Nava"],
   },
+  {
+      url: "https://docs.google.com/document/d/1yrhbP46F67OgNgwRzg0xSAikOE3dEi8qZIPVZssUzr8/edit?usp=sharing",
+      title: "Haunted Moon Island",
+      words: 1014,
+      author: "Solistic Barb",
+      characters: ["Multiple characters"]
+  },
+  {
+      url: "https://docs.google.com/document/d/1AuM4HeM6MLypvpE0iWs5loQQHTxqLwBL0ZcBoYYOtpE/edit?usp=sharing",
+      title: "Precognition",
+      words: 924,
+      author: "dasy",
+      characters: ["Nagomi Nava"]
+  }
   // -- END FICS --
 ].sort((left, right) => {
   if (left.author > right.author) {
@@ -52,8 +66,6 @@ const websiteState = () => {
         );
       }
       return filteredFics;
-    },
-    getFicMeta: (fic) =>
-      `${fic.author} [${fic.words} words; ${fic.characters.join(", ")}]`,
+    }
   };
 };
