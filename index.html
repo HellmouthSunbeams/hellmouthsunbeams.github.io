@@ -80,6 +80,11 @@
             <li>
               <a href="https://hellmouth.rocks/"> Hellmouth Rocks </a>
             </li>
+            <li>
+              <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQx9_IKm-q41z7urkkvZJGngoKQkXr2ShFCJu1NmMp7Gbr2nqRabxPQpJ-t7fKIVCdRltQaanzx7Enr/pubhtml">
+              The Hellmouth Community College Course Catalog
+              </a>
+            </li>
           </ul>
         </div>
         <div class="column">
@@ -96,8 +101,10 @@
           <ul id="fics-list">
             <template x-for="fic in getFilteredFics(ficFilters)">
               <li>
-                <a :href="fic.url" x-text='`"${fic.title}"`'> </a>
-                - <span x-text="getFicMeta(fic)"></span>
+                <a :href="fic.url" x-text='`"${fic.title}"`'> </a> - <span class="author" x-text="fic.author">
+
+                </span>
+                <p><span x-text="fic.words"></span> words<br/><span x-text="fic.characters.join(',')"></span></p>
               </li>
             </template>
           </ul>
