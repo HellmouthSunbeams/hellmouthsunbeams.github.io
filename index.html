@@ -89,40 +89,79 @@
             </li>
           </ul>
         </div>
+      </div>
+      <div class="row">
         <div class="column">
           <h2>Beam Fanwork</h2>
           <p>
-            A collection of Sunbeams fanwork. If you've written something
-            Beamy and want it to be added here, send us a pull request adding it
-            to
+            A collection of Sunbeams fanwork. If you've made something Beamy
+            and want it to be added here, send us a pull request adding it to
             <a
               href="https://github.com/HellmouthSunbeams/hellmouthsunbeams.github.io/blob/master/js/hellmouth.js"
               >the list</a
             >, or just ping @slavfox in the Discord.
           </p>
-          <h3>Writing</h3>
-          <ul id="fics-list">
-            <template x-for="fic in getFilteredFics(ficFilters)">
-              <li>
-                <a :href="fic.url" x-text='`"${fic.title}"`'> </a> -
-                <span class="author" x-text="fic.author"> </span>
-                <p>
-                  <span x-text="fic.words"></span> words<br /><span
-                    x-text="fic.characters.join(',')"
-                  ></span>
-                </p>
-              </li>
-            </template>
-          </ul>
-          <h3>Music</h3>
-          <ul id="music-list">
-            <template x-for="song in music">
-              <li>
-                <a :href="song.url" x-text='`"${song.title}"`'> </a> -
-                <span class="author" x-text="song.author"> </span>
-              </li>
-            </template>
-          </ul>
+          <div>
+            <hr/>
+            <h3>Writing</h3>
+            <ul id="fics-list">
+              <template x-for="fic in getFilteredFics(ficFilters)">
+                <li>
+                  <a :href="fic.url" x-text='`"${fic.title}"`'> </a> -
+                  <span class="author" x-text="fic.author"> </span>
+                  <p>
+                    <span x-text="fic.words"></span> words<br /><span
+                      x-text="fic.characters.join(',')"
+                    ></span>
+                  </p>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <div>
+            <hr/>
+            <h3>Music</h3>
+            <ul id="music-list">
+              <template x-for="song in music">
+                <li>
+                  <a :href="song.url" x-text='`"${song.title}"`'> </a> -
+                  <span class="author" x-text="song.author"> </span>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <div>
+            <hr/>
+            <h3>Art</h3>
+            <button @click="shuffle(artwork)">Shuffle</button>
+            <div id="art-gallery" class="grid">
+              <template x-for="work in artwork">
+                <div class="image-container">
+                  <a
+                    :href="work.blur === false ? work.url : 'javascript:void(0)'"
+                    ><img
+                      class="gallery-image"
+                      :src="work.src"
+                      :alt="work.title"
+                      :title="work.title"
+                      :class="{'blur': work.blur}"
+                      @click="work.blur = false"
+                  /></a>
+                  <div class="credit">
+                    <a x-text="work.author" :href="work.author_link ? work.author_link : 'javascript:void(0)'"></a>
+                  </div>
+                  <span class="test"></span>
+                  <template x-if="work.blur !== false">
+                    <div
+                      class="cw"
+                      x-text="work.cw"
+                      x-transition:leave="fade-out"
+                    ></div>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
