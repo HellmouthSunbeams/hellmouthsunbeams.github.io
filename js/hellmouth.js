@@ -1,6 +1,6 @@
-const sortFanwork = (works) =>
+const sortFanwork = (works, key = "title") =>
   works.sort((left, right) =>
-    (left.author + left.title).localeCompare(right.author + right.title)
+    (left.author + left[key]).localeCompare(right.author + right[key])
   );
 
 const fics = sortFanwork([
@@ -79,7 +79,7 @@ var shuffle = (array) => {
   return array;
 }
 
-const art = shuffle([
+const art = sortFanwork([
   // -- ADD YOUR ART HERE --
   {
     url: "https://twitter.com/CKaelde/status/1320040538704314368/photo",
@@ -143,6 +143,22 @@ const art = shuffle([
     author_link: "https://twitter.com/slavfoxman",
     characters: ["Nagomi Nava"],
     blur: false,
+  },
+  {
+    url: "https://twitter.com/slavfoxman/status/1299731960730923011/photo/1",
+    src: "/fanart/slavfoxman_nagomi_walking.png",
+    author: "@slavfoxman",
+    author_link: "https://twitter.com/slavfoxman/",
+    characters: ["Nagomi Nava"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/slavfoxman/status/1306958708149280774/photo/1",
+    src: "/fanart/slavfoxman_aro_nagomi_comic.png",
+    author: "@slavfoxman",
+    author_link: "https://twitter.com/slavfoxman/",
+    characters: ["Nagomi Nava"],
+    blur: false
   },
   {
     url: "https://twitter.com/slavfoxman/status/1310277601257193477/photo/1",
@@ -218,22 +234,6 @@ const art = shuffle([
     blur: false
   },
   {
-    url: "https://twitter.com/slavfoxman/status/1299731960730923011/photo/1",
-    src: "/fanart/slavfoxman_nagomi_walking.png",
-    author: "@slavfoxman",
-    author_link: "https://twitter.com/slavfoxman/",
-    characters: ["Nagomi Nava"],
-    blur: false
-  },
-  {
-    url: "https://twitter.com/slavfoxman/status/1306958708149280774/photo/1",
-    src: "/fanart/slavfoxman_aro_nagomi_comic.png",
-    author: "@slavfoxman",
-    author_link: "https://twitter.com/slavfoxman/",
-    characters: ["Nagomi Nava"],
-    blur: false
-  },
-  {
     url: "/fanart/pichi_emmett_full.png",
     src: "/fanart/pichi_emmett.png",
     author: "Pichi2214",
@@ -241,7 +241,152 @@ const art = shuffle([
     characters: ["Emmett Internet"],
     blur: false
   },
-]);
+  // Coblin
+  {
+    url: "/fanart/krasi_savov_bickle_full.png",
+    src: "/fanart/krasi_savov_bickle.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Eugenia Bickle"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Krasi_Savov/status/1317756008903659520/photo/1",
+    src: "/fanart/krasi_savov_duds.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Dudley Mueller"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_emmet2a_full.png",
+    src: "/fanart/krasi_savov_emmet2a.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Emmett Internet"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Krasi_Savov/status/1316468128923242504/photo/1",
+    src: "/fanart/krasi_savov_hahn.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Hahn Fox"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_hendricks_full.png",
+    src: "/fanart/krasi_savov_hendricks.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Hendricks Richardson"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_iggy_full.png",
+    src: "/fanart/krasi_savov_iggy.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Igneus Delacruz"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_jeff2_full.png",
+    src: "/fanart/krasi_savov_jeff2.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["JEFF!"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_lars_full.png",
+    src: "/fanart/krasi_savov_lars.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Lars Taylor"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_miguel_full.png",
+    src: "/fanart/krasi_savov_miguel.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Miguel James"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_moonroomba_full.png",
+    src: "/fanart/krasi_savov_moonroomba.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Moonba"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_nagomi_full_1.png",
+    src: "/fanart/krasi_savov_nagomi_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Nagomi Nava"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_nerd_full_1.png",
+    src: "/fanart/krasi_savov_nerd_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Nerd Pacheco"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_randy1_full_1.png",
+    src: "/fanart/krasi_savov_randy1_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Randall Marijuana"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Krasi_Savov/status/1318195220362764288/photo/1",
+    src: "/fanart/krasi_savov_sandy_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Sandoval Crossing"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_sigmund_full_1.png",
+    src: "/fanart/krasi_savov_sigmund_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Sigmund Castillo"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Krasi_Savov/status/1318195220362764288/photo/1",
+    src: "/fanart/krasi_savov_sutton2_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Sutton Bishop"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_sutton_full_1.png",
+    src: "/fanart/krasi_savov_sutton_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Sutton Bishop"],
+    blur: false
+  },
+  {
+    url: "/fanart/krasi_savov_zack_full_1.png",
+    src: "/fanart/krasi_savov_zack_1.png",
+    author: "@Krasi_Savov",
+    author_link: "https://twitter.com/Krasi_Savov",
+    characters: ["Zack Sanders"],
+    blur: false
+  },
+], "src");
 
 const ficCharacters = [...new Set(fics.map((fic) => fic["characters"]).flat())];
 const artCharacters = [

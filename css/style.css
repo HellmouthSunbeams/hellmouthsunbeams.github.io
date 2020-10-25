@@ -67,7 +67,6 @@ footer {
 .gallery-image {
   width: 100% !important;
   height: auto !important;
-  padding: 4px;
   border-radius: 10px;
   transition: all 0.6s;
 }
@@ -109,6 +108,7 @@ footer {
 .image-container {
   position: relative;
   text-align: center;
+  padding: 4px;
 }
 
 .cw {
