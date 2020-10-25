@@ -1,6 +1,6 @@
 const sortFanwork = (works, key = "title") =>
   works.sort((left, right) =>
-    (left.author + left[key]).localeCompare(right.author + right[key])
+    (left.author.replace(/^(@)/, "") + left[key]).localeCompare(right.author.replace(/^(@)/, "") + right[key])
   );
 
 const fics = sortFanwork([
@@ -386,49 +386,138 @@ const art = sortFanwork([
     characters: ["Zack Sanders"],
     blur: false
   },
+  // Glempy
+  {
+    url: "https://twitter.com/Glempy/status/1301863622193426433/photo/1",
+    src: "/fanart/glempy_emmett.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Emmett Internet"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Glempy/status/1306666083387150337/photo/1",
+    src: "/fanart/glempy_hahn.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Hahn Fox"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Glempy/status/1300504809250881536/photo/1",
+    src: "/fanart/glempy_hollywoof.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Alaynabella Hollywood"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Glempy/status/1292096715210870785/photo/1",
+    src: "/fanart/glempy_hollywood.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Alaynabella Hollywood"],
+    blur: false
+  },
+  {
+    url: "https://twitter.com/Glempy/status/1298238334800625664/photo/1",
+    src: "/fanart/glempy_malik.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Malik Romayne"],
+    blur: false
+  },
+  {
+    url: "/fanart/glempy_sutton_full.jpg",
+    src: "/fanart/glempy_sutton.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Sutton Bishop"],
+    blur: false
+  },
+  {
+    url: "/fanart/glempy_hendricks_full.jpg",
+    src: "/fanart/glempy_hendricks.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Hendricks Richardson"],
+    blur: false
+  },
+  {
+    url: "/fanart/glempy_hendricks2_full.jpg",
+    src: "/fanart/glempy_hendricks2.jpg",
+    author: "@Glempy",
+    author_link: "https://twitter.com/Glempy/",
+    characters: ["Hendricks Richardson"],
+    blur: false
+  },
 ], "src");
 
-const ficCharacters = [...new Set(fics.map((fic) => fic["characters"]).flat())];
-const artCharacters = [
-  ...new Set(art.map((work) => work["characters"]).flat()),
-];
+const countCharacters = (works) => {
+  var characters = {};
+  for (const work of works) {
+    for (const character of work.characters) {
+      if (character in characters) {
+        characters[character] += 1;
+      } else {
+        characters[character] = 1;
+      }
+    }
+  }
+  return characters;
+}
 
+const countAuthors = (works) => {
+  var authors = {};
+  for (const work of works) {
+    if (work.author in authors) {
+      authors[work.author] += 1;
+    } else {
+      authors[work.author] = 1;
+    }
+  }
+  return authors;
+}
+
+const ficCharacters = countCharacters(fics);
+const ficAuthors = countAuthors(fics);
+const artCharacters = countCharacters(art);
+const artAuthors = countAuthors(art);
 
 const websiteState = () => {
   return {
     masonry: null,
     artwork: art,
-    ficFilters: { characters: [], words: [0, Infinity], author: null },
-    artFilters: { characters: [], author: null },
+    ficFilters: { character: "all", words: [0, Infinity], author: "all" },
+    artFilters: { character: "all", author: "all" },
     ficCharacters: ficCharacters,
     artCharacters: artCharacters,
+    artFiltersOpen: false,
+    ficFiltersOpen: false,
     getFilteredFics: (filters) => {
-      var filteredFics = fics.filter(
+      var filteredFics = fics.map((fic, index) => ({id: index, ...fic}));
+      filteredFics = fics.filter(
         (fic) => filters.words[0] <= fic.words <= filters.words[1]
       );
-      if (filters.author !== null) {
+      if (filters.author !== "all") {
         filteredFics = filteredFics.filter(
-          (fic) => fic.author == filters.author
+          (fic) => fic.author === filters.author
         );
       }
-      if (filters.characters !== []) {
-        filteredFics = filteredFics.filter((fic) =>
-          filters.characters.every((c) => c in fic.characters)
-        );
+      if (filters.character !== "all") {
+        filteredFics = filteredFics.filter((work) => work.characters.includes(filters.character));
       }
       return filteredFics;
     },
     getFilteredArt: (filters) => {
-      var filteredArt = art;
-      if (filters.author !== null) {
-        filteredArt = filteredArt.filter((work) => work.author == work.author);
+      var filteredArt = art.map((work, index) => ({id: index, ...work}));
+      if (filters.author !== "all") {
+        filteredArt = filteredArt.filter((work) => work.author === filters.author);
       }
-      if (filters.characters !== []) {
-        filteredArt = filteredArt.filter((work) =>
-          filters.characters.every((c) => c in work.characters)
-        );
+      if (filters.character !== "all") {
+        filteredArt = filteredArt.filter((work) => work.characters.includes(filters.character));
       }
-      return filteredFics;
+      return filteredArt;
     },
   };
 };
