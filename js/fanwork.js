@@ -220,6 +220,14 @@ const art = sortFanwork(
       blur: false,
     },
     {
+      url: "https://twitter.com/larkiiiine/status/1320380827910418432/photo/1",
+      src: "/fanart/larkiiiine_celebration.png",
+      author: "@larkiiiine",
+      author_link: "https://twitter.com/larkiiiine/",
+      characters: ["Nerd Pacheco", "Lars Taylor", "Igneus Delacruz", "Nagomi Nava", "Sutton Bishop", "Miguel James", "Hahn Fox"],
+      blur: false,
+    },
+    {
       url: "https://twitter.com/larkiiiine/status/1319311820113543171/photo/1",
       src: "/fanart/larkiiiine_magmatic.png",
       author: "@larkiiiine",
