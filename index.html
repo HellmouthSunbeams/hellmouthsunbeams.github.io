@@ -94,15 +94,15 @@
         <div class="column">
           <h2>Beam Fanwork</h2>
           <p>
-            A collection of Sunbeams fanwork. If you've made something Beamy
-            and want it to be added here, send us a pull request adding it to
+            A collection of Sunbeams fanwork. If you've made something Beamy and
+            want it to be added here, send us a pull request adding it to
             <a
               href="https://github.com/HellmouthSunbeams/hellmouthsunbeams.github.io/blob/master/js/hellmouth.js"
               >the list</a
             >, or just ping @slavfox in the Discord.
           </p>
           <div>
-            <hr/>
+            <hr />
             <h3>Writing</h3>
             <ul id="fics-list">
               <template x-for="fic in getFilteredFics(ficFilters)">
@@ -119,7 +119,7 @@
             </ul>
           </div>
           <div>
-            <hr/>
+            <hr />
             <h3>Music</h3>
             <ul id="music-list">
               <template x-for="song in music">
@@ -131,7 +131,7 @@
             </ul>
           </div>
           <div>
-            <hr/>
+            <hr />
             <h3>Art</h3>
             <div>
               <button @click="artFiltersOpen = true">Filters</button>
@@ -144,10 +144,23 @@
                   </template>
                 </select>
                 -->
-                <select name="art-character" id="art-character" @change="artFilters.character = $refs.artCharacterSelect.value" x-ref="artCharacterSelect">
-                  <option value="all" x-text="`All characters (${art.length})`"></option>
-                  <template x-for="[character, count] in Object.entries(artCharacters)">
-                    <option :value="character" x-text="`${character} (${count})`"></option>
+                <select
+                  name="art-character"
+                  id="art-character"
+                  @change="artFilters.character = $refs.artCharacterSelect.value"
+                  x-ref="artCharacterSelect"
+                >
+                  <option
+                    value="all"
+                    x-text="`All characters (${art.length})`"
+                  ></option>
+                  <template
+                    x-for="[character, count] in Object.entries(artCharacters)"
+                  >
+                    <option
+                      :value="character"
+                      x-text="`${character} (${count})`"
+                    ></option>
                   </template>
                 </select>
               </div>
@@ -166,7 +179,10 @@
                       @click="artwork[work.id].blur = false"
                   /></a>
                   <div class="credit">
-                    <a x-text="work.author" :href="work.author_link ? work.author_link : 'javascript:void(0)'"></a>
+                    <a
+                      x-text="work.author"
+                      :href="work.author_link ? work.author_link : 'javascript:void(0)'"
+                    ></a>
                   </div>
                   <span class="test"></span>
                   <template x-if="artwork[work.id].blur !== false">
