@@ -9,7 +9,9 @@ const countCharacters = (works) => {
       }
     }
   }
-  return characters;
+  return Object.entries(characters).sort(([ch1, count1], [ch2, count2]) =>
+    count1 === count2 ? ch1.localeCompare(ch2) : count2 - count1
+  );
 };
 
 const countAuthors = (works) => {
@@ -21,7 +23,9 @@ const countAuthors = (works) => {
       authors[work.author] = 1;
     }
   }
-  return authors;
+  return Object.entries(authors).sort(([auth1, count1], [auth2, count2]) =>
+    count1 === count2 ? auth1.localeCompare(auth2) : count2 - count1
+  );
 };
 
 const ficCharacters = countCharacters(fics);

@@ -140,7 +140,7 @@
                 <!-- Disabled until I get it to work
                 <select name="art-author" id="art-author" @change="artFilters.author = $refs.artAuthorSelect.value" x-ref="artAuthorSelect">
                   <option value="all" x-text="`All artists (${art.length})`"></option>
-                  <template x-for="[author, count] in Object.entries(artAuthors)">
+                  <template x-for="[author, count] in artAuthors">
                     <option :value="author" x-text="`${author.replace(/^(@)/, '')} (${count})`"></option>
                   </template>
                 </select>
@@ -155,9 +155,7 @@
                     value="all"
                     x-text="`All characters (${art.length})`"
                   ></option>
-                  <template
-                    x-for="[character, count] in Object.entries(artCharacters)"
-                  >
+                  <template x-for="[character, count] in artCharacters">
                     <option
                       :value="character"
                       x-text="`${character} (${count})`"
