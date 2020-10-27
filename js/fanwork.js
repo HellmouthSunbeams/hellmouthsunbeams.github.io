@@ -49,11 +49,19 @@ const fics = sortFanwork([
   },
   {
     url:
-      "https://archiveofourown.org/works/27181150/chapters/66388855",
+      "https://archiveofourown.org/works/26404318",
     title: "Looking Back",
     words: 1892,
     author: "Emily | RireMakar",
     characters: ["Emmett Internet", "Randall Marijuana"],
+  },
+  {
+    url:
+      "https://archiveofourown.org/works/27205444",
+    title: "sunbeams rainy day chillin",
+    words: 1011,
+    author: "starboy",
+    characters: ["Other/multiple"],
   }
   // -- END FICS --
 ]);
