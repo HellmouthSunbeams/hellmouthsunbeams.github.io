@@ -39,6 +39,22 @@ const fics = sortFanwork([
     author: "dasy",
     characters: ["Nagomi Nava"],
   },
+  {
+    url:
+      "https://archiveofourown.org/works/27181150/chapters/66388855",
+    title: "The Last Hell Series",
+    words: 1702,
+    author: "Emily | RireMakar",
+    characters: ["Nagomi Nava"],
+  },
+  {
+    url:
+      "https://archiveofourown.org/works/27181150/chapters/66388855",
+    title: "Looking Back",
+    words: 1892,
+    author: "Emily | RireMakar",
+    characters: ["Emmett Internet", "Randall Marijuana"],
+  }
   // -- END FICS --
 ]);
 
