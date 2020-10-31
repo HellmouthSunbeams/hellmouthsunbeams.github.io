@@ -9,7 +9,7 @@ const fics = sortFanwork([
   // -- ADD YOUR FICS HERE --
   {
     url:
-      "https://docs.google.com/document/d/1g4a1xX678CjjaTLEb0_4Uay8qIyoCoiFaiPbx0Sg3Nk/edit",
+      "https://archiveofourown.org/works/27287347",
     title: "Rebooting",
     words: 293,
     author: "ENBY",
