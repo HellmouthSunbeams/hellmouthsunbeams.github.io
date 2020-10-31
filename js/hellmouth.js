@@ -30,9 +30,6 @@ const countAuthors = (works) => {
 
 const ficCharacters = countCharacters(fics);
 const ficAuthors = countAuthors(fics);
-const artCharacters = countCharacters(art);
-const artAuthors = countAuthors(art);
-
 const websiteState = () => {
   return {
     masonry: null,
@@ -60,7 +57,6 @@ const websiteState = () => {
     // art
     artwork: art,
     artFilters: { character: "all", author: "all" },
-    artCharacters: artCharacters,
     artFiltersOpen: false,
     getFilteredArt: (filters) => {
       var filteredArt = art.map((work, index) => ({ id: index, ...work }));
@@ -75,6 +71,42 @@ const websiteState = () => {
         );
       }
       return filteredArt;
+    },
+    getArtAuthorsCount: (filters) => {
+      var filteredArt = art;
+      if (filters.character !== "all") {
+        filteredArt = filteredArt.filter((work) =>
+          work.characters.includes(filters.character)
+        );
+      }
+      return countAuthors(filteredArt);      
+    },
+    getArtCharactersCount: (filters) => {
+      var filteredArt = art;
+      if (filters.author !== "all") {
+        filteredArt = filteredArt.filter(
+          (work) => work.author === filters.author
+        );
+      }
+      return countCharacters(filteredArt);      
+    },
+    getCountForCurrentAuthor: (filters) => {
+      if (filters.author !== "all") {
+        return art.filter(
+          (work) => work.author === filters.author
+        ).length;
+      } else {
+        return art.length;
+      }
+    },
+    getCountForCurrentCharacter: (filters) => {
+      if (filters.character !== "all") {
+        return art.filter(
+          (work) => work.character === filters.character
+        ).length;
+      } else {
+        return art.length;
+      }
     },
   };
 };

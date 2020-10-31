@@ -135,16 +135,13 @@
             <hr />
             <h3>Art</h3>
             <div>
-              <button @click="artFiltersOpen = true">Filters</button>
-              <div x-show="artFiltersOpen" @click.away="artFiltersOpen=false">
-                <!-- Disabled until I get it to work
+              <div>
                 <select name="art-author" id="art-author" @change="artFilters.author = $refs.artAuthorSelect.value" x-ref="artAuthorSelect">
-                  <option value="all" x-text="`All artists (${art.length})`"></option>
-                  <template x-for="[author, count] in artAuthors">
+                  <option value="all" x-text="`All artists (${getCountForCurrentCharacter(artFilters)})`"></option>
+                  <template x-for="[author, count] in getArtAuthorsCount(artFilters)">
                     <option :value="author" x-text="`${author.replace(/^(@)/, '')} (${count})`"></option>
                   </template>
                 </select>
-                -->
                 <select
                   name="art-character"
                   id="art-character"
@@ -153,9 +150,9 @@
                 >
                   <option
                     value="all"
-                    x-text="`All characters (${art.length})`"
+                    x-text="`All characters (${getCountForCurrentAuthor(artFilters)})`"
                   ></option>
-                  <template x-for="[character, count] in artCharacters">
+                  <template x-for="[character, count] in getArtCharactersCount(artFilters)">
                     <option
                       :value="character"
                       x-text="`${character} (${count})`"
