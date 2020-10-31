@@ -136,10 +136,23 @@
             <h3>Art</h3>
             <div>
               <div>
-                <select name="art-author" id="art-author" @change="artFilters.author = $refs.artAuthorSelect.value" x-ref="artAuthorSelect">
-                  <option value="all" x-text="`All artists (${getCountForCurrentCharacter(artFilters)})`"></option>
-                  <template x-for="[author, count] in getArtAuthorsCount(artFilters)">
-                    <option :value="author" x-text="`${author.replace(/^(@)/, '')} (${count})`"></option>
+                <select
+                  name="art-author"
+                  id="art-author"
+                  @change="artFilters.author = $refs.artAuthorSelect.value"
+                  x-ref="artAuthorSelect"
+                >
+                  <option
+                    value="all"
+                    x-text="`All artists (${getCountForCurrentCharacter(artFilters)})`"
+                  ></option>
+                  <template
+                    x-for="[author, count] in getArtAuthorsCount(artFilters)"
+                  >
+                    <option
+                      :value="author"
+                      x-text="`${author.replace(/^(@)/, '')} (${count})`"
+                    ></option>
                   </template>
                 </select>
                 <select
@@ -152,7 +165,9 @@
                     value="all"
                     x-text="`All characters (${getCountForCurrentAuthor(artFilters)})`"
                   ></option>
-                  <template x-for="[character, count] in getArtCharactersCount(artFilters)">
+                  <template
+                    x-for="[character, count] in getArtCharactersCount(artFilters)"
+                  >
                     <option
                       :value="character"
                       x-text="`${character} (${count})`"

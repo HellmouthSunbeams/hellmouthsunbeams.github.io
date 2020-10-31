@@ -79,7 +79,7 @@ const websiteState = () => {
           work.characters.includes(filters.character)
         );
       }
-      return countAuthors(filteredArt);      
+      return countAuthors(filteredArt);
     },
     getArtCharactersCount: (filters) => {
       var filteredArt = art;
@@ -88,22 +88,19 @@ const websiteState = () => {
           (work) => work.author === filters.author
         );
       }
-      return countCharacters(filteredArt);      
+      return countCharacters(filteredArt);
     },
     getCountForCurrentAuthor: (filters) => {
       if (filters.author !== "all") {
-        return art.filter(
-          (work) => work.author === filters.author
-        ).length;
+        return art.filter((work) => work.author === filters.author).length;
       } else {
         return art.length;
       }
     },
     getCountForCurrentCharacter: (filters) => {
       if (filters.character !== "all") {
-        return art.filter(
-          (work) => work.character === filters.character
-        ).length;
+        return art.filter((work) => work.character === filters.character)
+          .length;
       } else {
         return art.length;
       }

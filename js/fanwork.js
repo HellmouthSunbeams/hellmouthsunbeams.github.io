@@ -217,6 +217,14 @@ const art = sortFanwork(
       blur: false,
     },
     {
+      url: "https://twitter.com/larkiiiine/status/1321431144429215744/photo/1",
+      src: "/fanart/larkiiiine_cat_cafe.png",
+      author: "@larkiiiine",
+      author_link: "https://twitter.com/larkiiiine/",
+      characters: ["Nagomi Nava", "Hahn Fox"],
+      blur: false,
+    },
+    {
       url: "https://twitter.com/larkiiiine/status/1317522798093438976/photo/1",
       src: "/fanart/larkiiiine_party.png",
       author: "@larkiiiine",
