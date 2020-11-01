@@ -8,8 +8,7 @@ const sortFanwork = (works, key = "title") =>
 const fics = sortFanwork([
   // -- ADD YOUR FICS HERE --
   {
-    url:
-      "https://archiveofourown.org/works/27287347",
+    url: "https://archiveofourown.org/works/27287347",
     title: "Rebooting",
     words: 293,
     author: "ENBY",
@@ -162,6 +161,14 @@ const art = sortFanwork(
     {
       url: "https://twitter.com/slavfoxman/status/1301582950870417415/photo/1",
       src: "/fanart/slavfoxman_nagomi_tlopps.png",
+      author: "@slavfoxman",
+      author_link: "https://twitter.com/slavfoxman",
+      characters: ["Nagomi Nava"],
+      blur: false,
+    },
+    {
+      url: "https://twitter.com/slavfoxman/status/1322929459645788161",
+      src: "/fanart/slavfoxman_ferryman_nagomi.png",
       author: "@slavfoxman",
       author_link: "https://twitter.com/slavfoxman",
       characters: ["Nagomi Nava"],
