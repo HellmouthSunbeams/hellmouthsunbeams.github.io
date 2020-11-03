@@ -1057,7 +1057,7 @@ const art = sortFanwork(
     // King Mudkip
     {
       url:
-        "https://twitter.com/King_Mudkip/status/1323478716266274816 /photo/1",
+        "https://twitter.com/King_Mudkip/status/1323478716266274816/photo/1",
       src: "/fanart/kingmudkip_duds.webp",
       author: "@King_Mudkip",
       author_link: "https://twitter.com/King_Mudkip",
