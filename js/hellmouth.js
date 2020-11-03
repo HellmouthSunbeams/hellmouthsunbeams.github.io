@@ -37,73 +37,52 @@ const websiteState = () => {
     ficFilters: { character: "all", words: [0, Infinity], author: "all" },
     ficCharacters: ficCharacters,
     ficFiltersOpen: false,
-    getFilteredFics: (filters) => {
+    getFilteredFics: function () {
       var filteredFics = fics.map((fic, index) => ({ id: index, ...fic }));
       filteredFics = fics.filter(
-        (fic) => filters.words[0] <= fic.words <= filters.words[1]
+        (fic) =>
+          this.ficFilters.words[0] <= fic.words <= this.ficFilters.words[1]
       );
-      if (filters.author !== "all") {
+      if (this.ficFilters.author !== "all") {
         filteredFics = filteredFics.filter(
-          (fic) => fic.author === filters.author
+          (fic) => fic.author === this.ficFilters.author
         );
       }
-      if (filters.character !== "all") {
+      if (this.ficFilters.character !== "all") {
         filteredFics = filteredFics.filter((work) =>
-          work.characters.includes(filters.character)
+          work.characters.includes(this.ficFilters.character)
         );
       }
       return filteredFics;
     },
     // art
     artwork: art,
+    artFilteredByAuthor: art,
+    artFilteredByCharacter: art,
     artFilters: { character: "all", author: "all" },
     artFiltersOpen: false,
-    getFilteredArt: (filters) => {
-      var filteredArt = art.map((work, index) => ({ id: index, ...work }));
-      if (filters.author !== "all") {
-        filteredArt = filteredArt.filter(
-          (work) => work.author === filters.author
-        );
+    filterArtByAuthor: function (author) {
+      this.artFilters.author = author;
+      var filteredArt = [...this.artwork];
+      if (author !== "all") {
+        filteredArt = filteredArt.filter((work) => work.author === author);
       }
-      if (filters.character !== "all") {
+      this.artFilteredByAuthor = filteredArt;
+    },
+    filterArtByCharacter: function (character) {
+      this.artFilters.character = character;
+      var filteredArt = [...this.artwork];
+      if (character !== "all") {
         filteredArt = filteredArt.filter((work) =>
-          work.characters.includes(filters.character)
+          work.characters.includes(character)
         );
       }
-      return filteredArt;
+      this.artFilteredByCharacter = filteredArt;
     },
-    getArtAuthorsCount: (filters) => {
-      var filteredArt = art;
-      if (filters.character !== "all") {
-        filteredArt = filteredArt.filter((work) =>
-          work.characters.includes(filters.character)
-        );
-      }
-      return countAuthors(filteredArt);
-    },
-    getArtCharactersCount: (filters) => {
-      var filteredArt = art;
-      if (filters.author !== "all") {
-        filteredArt = filteredArt.filter(
-          (work) => work.author === filters.author
-        );
-      }
-      return countCharacters(filteredArt);
-    },
-    getCountForCurrentAuthor: (filters) => {
-      if (filters.author !== "all") {
-        return art.filter((work) => work.author === filters.author).length;
-      } else {
-        return art.length;
-      }
-    },
-    getCountForCurrentCharacter: (filters) => {
-      if (filters.character !== "all") {
-        return art.filter((work) => work.character === filters.character)
-          .length;
-      } else {
-        return art.length;
-      }
+    getFilteredArt: function () {
+      return this.artFilteredByAuthor.filter((work) =>
+        this.artFilteredByCharacter.includes(work)
+      );
     },
   };
 };

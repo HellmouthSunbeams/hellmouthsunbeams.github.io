@@ -106,7 +106,7 @@
             <hr />
             <h3>Writing</h3>
             <ul id="fics-list">
-              <template x-for="fic in getFilteredFics(ficFilters)">
+              <template x-for="fic in getFilteredFics()">
                 <li>
                   <a :href="fic.url" x-text='`"${fic.title}"`'> </a> -
                   <span class="author" x-text="fic.author"> </span>
@@ -139,15 +139,15 @@
                 <select
                   name="art-author"
                   id="art-author"
-                  @change="artFilters.author = $refs.artAuthorSelect.value"
+                  @change="filterArtByAuthor($refs.artAuthorSelect.value)"
                   x-ref="artAuthorSelect"
                 >
                   <option
                     value="all"
-                    x-text="`All artists (${getCountForCurrentCharacter(artFilters)})`"
+                    x-text="`All artists (${artFilteredByCharacter.length})`"
                   ></option>
                   <template
-                    x-for="[author, count] in getArtAuthorsCount(artFilters)"
+                    x-for="[author, count] in countAuthors(artFilteredByCharacter)"
                   >
                     <option
                       :value="author"
@@ -158,15 +158,15 @@
                 <select
                   name="art-character"
                   id="art-character"
-                  @change="artFilters.character = $refs.artCharacterSelect.value"
+                  @change="filterArtByCharacter($refs.artCharacterSelect.value)"
                   x-ref="artCharacterSelect"
                 >
                   <option
                     value="all"
-                    x-text="`All characters (${getCountForCurrentAuthor(artFilters)})`"
+                    x-text="`All characters (${artFilteredByAuthor.length})`"
                   ></option>
                   <template
-                    x-for="[character, count] in getArtCharactersCount(artFilters)"
+                    x-for="[character, count] in countCharacters(artFilteredByAuthor)"
                   >
                     <option
                       :value="character"
@@ -177,7 +177,7 @@
               </div>
             </div>
             <div id="art-gallery" class="grid">
-              <template x-for="work in getFilteredArt(artFilters)">
+              <template x-for="work in getFilteredArt()">
                 <div class="image-container">
                   <a
                     :href="work.blur === false ? work.url : 'javascript:void(0)'"
