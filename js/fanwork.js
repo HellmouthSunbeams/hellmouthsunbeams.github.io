@@ -1056,12 +1056,19 @@ const art = sortFanwork(
     },
     // King Mudkip
     {
-      url:
-        "https://twitter.com/King_Mudkip/status/1323478716266274816/photo/1",
+      url: "https://twitter.com/King_Mudkip/status/1323478716266274816/photo/1",
       src: "/fanart/kingmudkip_duds.webp",
       author: "@King_Mudkip",
       author_link: "https://twitter.com/King_Mudkip",
       characters: ["Dudley Mueller"],
+      blur: false,
+    },
+    {
+      url: "https://twitter.com/King_Mudkip/status/1329580751478681603",
+      src: "/fanart/kingmudkip_lars.webp",
+      author: "@King_Mudkip",
+      author_link: "https://twitter.com/King_Mudkip",
+      characters: ["Lars Taylor"],
       blur: false,
     },
   ],
