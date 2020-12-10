@@ -53,6 +53,13 @@ const fics = sortFanwork([
     characters: ["Emmett Internet", "Randall Marijuana"],
   },
   {
+    url: "https://archiveofourown.org/works/27989478",
+    title: "Guarded Crossings",
+    words: 7054,
+    author: "Livi (@livicottle on twitter)",
+    characters: ["Other/multiple"],
+  },
+  {
     url: "https://archiveofourown.org/works/27205444",
     title: "sunbeams rainy day chillin",
     words: 1011,
