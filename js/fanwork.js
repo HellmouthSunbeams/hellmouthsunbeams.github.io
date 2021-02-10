@@ -24,6 +24,14 @@ const fics = sortFanwork([
   },
   {
     url:
+      "https://docs.google.com/document/d/e/2PACX-1vTXywjAWoi2FtR-kbyaHVd4lKIlwrmJAXzfNoNB3gtGBAPV0nRpxXQ1evZ-ZawU-EQTb39El4ldqFfJ/pub",
+    title: "Shreds",
+    words: 1249,
+    author: "slavfox",
+    characters: ["Nagomi Nava"],
+  },
+  {
+    url:
       "https://docs.google.com/document/d/1yrhbP46F67OgNgwRzg0xSAikOE3dEi8qZIPVZssUzr8/edit?usp=sharing",
     title: "Haunted Moon Island",
     words: 1014,
