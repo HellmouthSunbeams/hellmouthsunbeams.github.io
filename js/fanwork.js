@@ -16,17 +16,17 @@ const fics = sortFanwork([
   },
   {
     url:
-      "https://docs.google.com/document/d/18Vg6VQuudZoPE7BFbi4_1LLj57wzXw3t7hd8S8lwtjM/edit?usp=sharing",
+      "https://archiveofourown.org/works/29352132",
     title: "This Is Me",
-    words: 922,
+    words: 918,
     author: "slavfox",
     characters: ["Nagomi Nava"],
   },
   {
     url:
-      "https://docs.google.com/document/d/e/2PACX-1vTXywjAWoi2FtR-kbyaHVd4lKIlwrmJAXzfNoNB3gtGBAPV0nRpxXQ1evZ-ZawU-EQTb39El4ldqFfJ/pub",
+      "https://archiveofourown.org/works/29352096",
     title: "Shreds",
-    words: 1249,
+    words: 1394,
     author: "slavfox",
     characters: ["Nagomi Nava"],
   },
